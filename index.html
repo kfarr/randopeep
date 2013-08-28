@@ -121,7 +121,7 @@
 <li>
 <code>randopeep.data</code> - the raw data, keyed by list name</li>
 <li>
-<code>randopeep.get(n, list)</code> - <code>n</code> items from <code>list</code>
+<code>randopeep.get(list, n)</code> - <code>n</code> items from <code>list</code>
 </li>
 </ul><h3>
 <a name="parameters-used-above" class="anchor" href="#parameters-used-above"><span class="octicon octicon-link"></span></a>Parameters used above</h3>
@@ -223,7 +223,7 @@
 
 <p>Say you want an English female firstname, and a hacker lastname:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">myLeetName</span> <span class="o">=</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'name/english/female/first'</span><span class="p">)</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'name/netrunner/first'</span><span class="p">);</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">myLeetName</span> <span class="o">=</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'name/english/female/first'</span><span class="p">)</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'name/netrunner/first'</span><span class="p">);</span>
 </pre></div>
 
 <h2>
