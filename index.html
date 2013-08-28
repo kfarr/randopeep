@@ -35,13 +35,15 @@
 <a name="rando-peeps-data" class="anchor" href="#rando-peeps-data"><span class="octicon octicon-link"></span></a><a href="http://konsumer.github.io/randopeep/">Rando Peeps Data</a>
 </h1>
 
+<!-- snip -->
+
 <p>Originally I made this for generating fake NPCs for RPGs &amp; fake accounts for things online.</p>
 
-<p><img src="http://thenewforty.areavoices.com/files/2012/04/marshmallow_peeps.jpg" alt="Peeps"></p>
+<p><a href="https://github-camo.global.ssl.fastly.net/57f79964fd5f7583c398408724f24106dbba76bc/687474703a2f2f7468656e6577666f7274792e61726561766f696365732e636f6d2f66696c65732f323031322f30342f6d617273686d616c6c6f775f70656570732e6a7067" target="_blank"><img src="https://github-camo.global.ssl.fastly.net/57f79964fd5f7583c398408724f24106dbba76bc/687474703a2f2f7468656e6577666f7274792e61726561766f696365732e636f6d2f66696c65732f323031322f30342f6d617273686d616c6c6f775f70656570732e6a7067" alt="Peeps" style="max-width:100%;"></a></p>
 
-<p><a href="https://nodei.co/npm/randopeep/"><img src="https://nodei.co/npm/randopeep.png" alt="NPM"></a>
-<a href="https://travis-ci.org/konsumer/randopeep"><img src="https://travis-ci.org/konsumer/randopeep.png?branch=master" alt="Build Status"></a>
-<a href="http://konsumer.github.io/randopeep/test/"><img src="http://www.developmentwall.com/wp-content/uploads/2012/01/demo.png" alt="Demo"></a></p>
+<p><a href="https://nodei.co/npm/randopeep/"><img src="https://nodei.co/npm/randopeep.png" alt="NPM" style="max-width:100%;"></a>
+<a href="https://travis-ci.org/konsumer/randopeep"><img src="https://travis-ci.org/konsumer/randopeep.png?branch=master" alt="Build Status" style="max-width:100%;"></a>
+<a href="http://konsumer.github.io/randopeep/test/"><img src="https://github-camo.global.ssl.fastly.net/001b753c1a94fe08d2b5650e94ce748397413c88/687474703a2f2f7777772e646576656c6f706d656e7477616c6c2e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031322f30312f64656d6f2e706e67" alt="Demo" style="max-width:100%;"></a></p>
 
 <h2>
 <a name="what-random-stuff-can-it-generate" class="anchor" href="#what-random-stuff-can-it-generate"><span class="octicon octicon-link"></span></a>What random stuff can it generate?</h2>
@@ -60,7 +62,38 @@
 <code>randopeep.job(n)</code> - a job a person might do</li>
 <li>
 <code>randopeep.invention(n)</code> - a seemingly awesome-sounding invention</li>
-</ul><h3>
+</ul><h4>
+<a name="params" class="anchor" href="#params"><span class="octicon octicon-link"></span></a><code>params</code>
+</h4>
+
+<p>A lot of different types of names can be generated. All parameters are optional, here are the defaults:</p>
+
+<div class="highlight"><pre><span class="p">{</span>
+    <span class="s1">'origin'</span> <span class="o">:</span> <span class="nx">random</span> <span class="o">-</span> <span class="s1">'chinese'</span><span class="p">,</span> <span class="s1">'dark/elven'</span><span class="p">,</span> <span class="s1">'dwarven'</span><span class="p">,</span><span class="s1">'elven'</span><span class="p">,</span> <span class="s1">'english'</span><span class="p">,</span> <span class="s1">'germanic'</span><span class="p">,</span><span class="s1">'japanese'</span><span class="p">,</span><span class="s1">'orcish'</span><span class="p">,</span><span class="s1">'spanish'</span><span class="p">,</span><span class="s1">'netrunner'</span><span class="p">,</span>
+    <span class="s1">'gender'</span><span class="o">:</span> <span class="nx">random</span> <span class="o">-</span> <span class="s1">'male'</span><span class="p">,</span><span class="s1">'female'</span><span class="p">,</span>
+    <span class="s1">'last'</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s1">'justLast'</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s1">'prefix'</span><span class="o">:</span> <span class="nx">random</span> <span class="o">-</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s1">'returnData'</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>
+<code>origin</code> - the place/time the names come from (see data dir)</li>
+<li>
+<code>gender</code> - male/female, if names are gendered</li>
+<li>
+<code>last</code> - get a lastname?</li>
+<li>
+<code>justLast</code> - get lastname only?</li>
+<li>
+<code>prefix</code> - look up gendered prefix, if applicable</li>
+<li>
+<code>returnData</code> - return options (as generated) with <code>name</code> field, good if you want random gender/origin, but want to know about it after</li>
+</ul><p>If you set any of them to an array, it will pick a random element.</p>
+
+<h3>
 <a name="places" class="anchor" href="#places"><span class="octicon octicon-link"></span></a>Places</h3>
 
 <ul>
@@ -100,6 +133,17 @@
 <code>randopeep.corporate.catchPhrase(n)</code> - <code>n</code> corporate catchphrases</li>
 <li>
 <code>randopeep.corporate.bs(n)</code> - <code>n</code> lines of corporate BS</li>
+</ul><h4>
+<a name="type" class="anchor" href="#type"><span class="octicon octicon-link"></span></a><code>type</code>
+</h4>
+
+<p>It can be one of these:</p>
+
+<ul>
+<li>cyber -  a company from the future</li>
+<li>firm - a law-firm, all last names are random non-fantasy, but from the same origin</li>
+<li>small - a small company</li>
+<li>large - a large corp</li>
 </ul><h3>
 <a name="internet-things" class="anchor" href="#internet-things"><span class="octicon octicon-link"></span></a>Internet Things</h3>
 
@@ -112,7 +156,13 @@
 <code>randopeep.internet.email(derived, n)</code> - an email address, <code>derived</code> is explained, below</li>
 <li>
 <code>randopeep.internet.username(derived, n)</code> - an internet username, <code>derived</code> is explained, below</li>
-</ul><h3>
+</ul><h4>
+<a name="derived" class="anchor" href="#derived"><span class="octicon octicon-link"></span></a><code>derived</code>
+</h4>
+
+<p>Will attempt to use the text that you give it as a base for generating other things.  Makes more-legit looking email, if you already know the name, for example.</p>
+
+<h3>
 <a name="random-text" class="anchor" href="#random-text"><span class="octicon octicon-link"></span></a>Random Text</h3>
 
 <ul>
@@ -127,58 +177,7 @@
 <li>
 <code>randopeep.get(list, n)</code> - <code>n</code> items from <code>list</code>
 </li>
-</ul><h3>
-<a name="parameters-used-above" class="anchor" href="#parameters-used-above"><span class="octicon octicon-link"></span></a>Parameters used above</h3>
-
-<h4>
-<a name="params-for-randopeepname" class="anchor" href="#params-for-randopeepname"><span class="octicon octicon-link"></span></a><code>params</code> for <code>randopeep.name</code>
-</h4>
-
-<p>A lot of different types of names can be generated. All parameters are optional, here are the defaults:</p>
-
-<div class="highlight"><pre><span class="p">{</span>
-    <span class="s1">'origin'</span> <span class="o">:</span> <span class="nx">random</span> <span class="o">-</span> <span class="s1">'chinese'</span><span class="p">,</span> <span class="s1">'dark/elven'</span><span class="p">,</span> <span class="s1">'dwarven'</span><span class="p">,</span><span class="s1">'elven'</span><span class="p">,</span> <span class="s1">'english'</span><span class="p">,</span> <span class="s1">'germanic'</span><span class="p">,</span><span class="s1">'japanese'</span><span class="p">,</span><span class="s1">'orcish'</span><span class="p">,</span><span class="s1">'spanish'</span><span class="p">,</span><span class="s1">'netrunner'</span><span class="p">,</span>
-    <span class="s1">'gender'</span><span class="o">:</span> <span class="nx">random</span> <span class="o">-</span> <span class="s1">'male'</span><span class="p">,</span><span class="s1">'female'</span><span class="p">,</span>
-    <span class="s1">'last'</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s1">'justLast'</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="s1">'prefix'</span><span class="o">:</span> <span class="nx">random</span> <span class="o">-</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="s1">'returnData'</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-<span class="p">}</span>
-</pre></div>
-
-<ul>
-<li>
-<code>origin</code> - the place/time the names come from (see data dir)</li>
-<li>
-<code>gender</code> - male/female, if names are gendered</li>
-<li>
-<code>last</code> - get a lastname?</li>
-<li>
-<code>justLast</code> - get lastname only?</li>
-<li>
-<code>prefix</code> - look up gendered prefix, if applicable</li>
-<li>
-<code>returnData</code> - return options (as generated) with <code>name</code> field, good if you want random gender/origin, but want to know about it after</li>
-</ul><p>If you set any of them to an array, it will pick a random element.</p>
-
-<h4>
-<a name="type-for-randopeepcorporatename" class="anchor" href="#type-for-randopeepcorporatename"><span class="octicon octicon-link"></span></a><code>type</code> for <code>randopeep.corporate.name</code>
-</h4>
-
-<p>It can be one of these:</p>
-
-<ul>
-<li>cyber -  a company from the future</li>
-<li>firm - a law-firm, all last names are random non-fantasy, but from the same origin</li>
-<li>small - a small company</li>
-<li>large - a large corp</li>
-</ul><h4>
-<a name="derived-for-randopeepinternet" class="anchor" href="#derived-for-randopeepinternet"><span class="octicon octicon-link"></span></a><code>derived</code> for <code>randopeep.internet.*</code>
-</h4>
-
-<p>Will attempt to use the text that you give it as a base for generating other things.  Makes more-legit looking email, if you already know the name, for example.</p>
-
-<h2>
+</ul><h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>See unit-tests in <a href="https://github.com/konsumer/randopeep/blob/master/test/test.js">test/test.js</a> if you need more details.</p>
@@ -249,6 +248,8 @@
 <ul>
 <li>see <a href="https://github.com/konsumer/randopeep/tree/master/data-src">data credits</a> for info about where a lot of this stuff came from.</li>
 </ul>
+
+<!-- /snip -->
         </section>
 
         <footer>
