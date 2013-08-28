@@ -17,7 +17,7 @@
     <header>
       <div class="container">
         <h1>Rando Peep</h1>
-        <h2>Generate details about people, in javascript, based on data files</h2>
+        <h2>Generate random fake people, in javascript, based on data files.</h2>
 
         <section id="downloads">
           <a href="https://github.com/konsumer/randopeeps/zipball/master" class="btn">Download as .zip</a>
@@ -29,41 +29,147 @@
 
     <div class="container">
       <section id="main_content">
-        <p>Here is the name of your <a href="http://www.theonion.com/articles/canadian-girlfriend-unsubstantiated,1484/">Canadian girlfriend</a>: <script>document.write(randopeep.get('person/modern/female', 'person/modern/last'));</script>. Her name online is <script>document.write(randopeep.get('person/netrunner', 'person/netrunner'));</script>, she's pretty big in teh <script>document.write(randopeep.get('jobs'));</script> scene.</p>
 
-<p>It's basically a random lookup from a list of names.</p>
+<p><a href="https://nodei.co/npm/randopeep/"><img src="https://nodei.co/npm/randopeep.png" alt="NPM" style="max-width:100%;"></a>
+<a href="https://travis-ci.org/konsumer/randopeep"><img src="https://travis-ci.org/konsumer/randopeep.png?branch=master" alt="Build Status" style="max-width:100%;"></a></p>
 
+<h2>
+<a name="what-random-stuff-can-it-generate" class="anchor" href="#what-random-stuff-can-it-generate"><span class="octicon octicon-link"></span></a>What random stuff can it generate?</h2>
 
-<p>Built-in lists include:</p>
+<p>All parameters are optional.</p>
+
+<p><code>n</code> parameters is how many you would like, leave blank for 1.</p>
+
+<h3>
+<a name="people" class="anchor" href="#people"><span class="octicon octicon-link"></span></a>People</h3>
 
 <ul>
-<li>Modern male/female names from census data (person/modern/male, person/modern/female)</li>
-<li>Hacker names (person/netrunner)</li>
-<li>Jobs a person might do in the modern world (jobs)</li>
-</ul>
+<li>
+<code>randopeep.name(params, n)</code> - a person's name, <code>params</code> are explained below</li>
+<li>
+<code>randopeep.job(n)</code> - a job a person might do</li>
+<li>
+<code>randopeep.invention(n)</code> - a seemingly awesome-sounding invention</li>
+</ul><h3>
+<a name="places" class="anchor" href="#places"><span class="octicon octicon-link"></span></a>Places</h3>
 
-<p>Built-in generator functions for random stuff include:<p>
 <ul>
-<li>Credit card numbers (randopeep.cc('mastercard'))</li>
-</ul>
+<li>
+<code>randopeep.address.state(n)</code> - a US state</li>
+<li>
+<code>randopeep.address.state.a(n)</code> - an abbreviated US state</li>
+<li>
+<code>randopeep.address.zip(n)</code> - a zipcode</li>
+<li>
+<code>randopeep.address.city(n)</code> - a pretend city</li>
+<li>
+<code>randopeep.address.geo(n)</code> - a geolocation</li>
+<li>
+<code>randopeep.address.streetName(n)</code> - a streetName</li>
+<li>
+<code>randopeep.address.streetAddress(useFullAddress, n)</code> - a street address, set useFullAddress to get secondary address</li>
+<li>
+<code>randopeep.address.phone(n)</code> - a phone number</li>
+<li>
+<code>randopeep.address.uk.country(n)</code> - a country in the UK</li>
+<li>
+<code>randopeep.address.uk.county(n)</code> - a county in the UK</li>
+</ul><h3>
+<a name="credit-card-numbers" class="anchor" href="#credit-card-numbers"><span class="octicon octicon-link"></span></a>Credit-card Numbers</h3>
+
+<ul>
+<li>
+<code>randopeep.cc(type, charCount, n)</code> - a credit-card, <code>type</code> is "visa", "mastercard", "amex", or "discover". <code>charCount</code> should be 13 or 16</li>
+</ul><h3>
+<a name="corporate-things" class="anchor" href="#corporate-things"><span class="octicon octicon-link"></span></a>Corporate Things</h3>
+
+<ul>
+<li>
+<code>randopeep.corporate.name(type, n)</code> - a corporate name, <code>type</code> is explained below</li>
+<li>
+<code>randopeep.corporate.catchPhrase(n)</code> - <code>n</code> corporate catchphrases</li>
+<li>
+<code>randopeep.corporate.bs(n)</code> - <code>n</code> lines of corporate BS</li>
+</ul><h3>
+<a name="internet-things" class="anchor" href="#internet-things"><span class="octicon octicon-link"></span></a>Internet Things</h3>
+
+<ul>
+<li>
+<code>randopeep.internet.ip(n)</code> - an IP address</li>
+<li>
+<code>randopeep.internet.domain(derived, n)</code> - a internet domainname, <code>derived</code> is explained, below</li>
+<li>
+<code>randopeep.internet.email(derived, n)</code> - an email address, <code>derived</code> is explained, below</li>
+<li>
+<code>randopeep.internet.username(derived, n)</code> - an internet username, <code>derived</code> is explained, below</li>
+</ul><h3>
+<a name="random-text" class="anchor" href="#random-text"><span class="octicon octicon-link"></span></a>Random Text</h3>
+
+<ul>
+<li>
+<code>randopeep.ipsum(n, list)</code> - <code>n</code> words from ipsum <code>list</code>, default list is "lorem" and default count is 200</li>
+</ul><h3>
+<a name="other-stuff" class="anchor" href="#other-stuff"><span class="octicon octicon-link"></span></a>Other stuff</h3>
+
+<ul>
+<li>
+<code>randopeep.data</code> - the raw data, keyed by list name</li>
+<li>
+<code>randopeep.get(n, list)</code> - <code>n</code> items from <code>list</code>
+</li>
+</ul><h3>
+<a name="parameters-used-above" class="anchor" href="#parameters-used-above"><span class="octicon octicon-link"></span></a>Parameters used above</h3>
+
+<h4>
+<a name="params-for-randopeepname" class="anchor" href="#params-for-randopeepname"><span class="octicon octicon-link"></span></a><code>params</code> for <code>randopeep.name</code>
+</h4>
+
+<p>A lot of different types of names can be generated. All parameters are optional, here are the defaults:</p>
+
+<div class="highlight"><pre><span class="p">{</span>
+    <span class="s1">'origin'</span> <span class="o">:</span> <span class="nx">random</span> <span class="o">-</span> <span class="s1">'chinese'</span><span class="p">,</span> <span class="s1">'dark/elven'</span><span class="p">,</span> <span class="s1">'dwarven'</span><span class="p">,</span><span class="s1">'elven'</span><span class="p">,</span> <span class="s1">'english'</span><span class="p">,</span> <span class="s1">'germanic'</span><span class="p">,</span><span class="s1">'japanese'</span><span class="p">,</span><span class="s1">'orcish'</span><span class="p">,</span><span class="s1">'spanish'</span><span class="p">,</span><span class="s1">'netrunner'</span><span class="p">,</span>
+    <span class="s1">'gender'</span><span class="o">:</span> <span class="nx">random</span> <span class="o">-</span> <span class="s1">'male'</span><span class="p">,</span><span class="s1">'female'</span><span class="p">,</span>
+    <span class="s1">'last'</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s1">'justLast'</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s1">'prefix'</span><span class="o">:</span> <span class="nx">random</span> <span class="o">-</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s1">'returnData'</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>
+<code>origin</code> - the place/time the names come from (see data dir)</li>
+<li>
+<code>gender</code> - male/female, if names are gendered</li>
+<li>
+<code>last</code> - get a lastname?</li>
+<li>
+<code>justLast</code> - get lastname only?</li>
+<li>
+<code>prefix</code> - look up gendered prefix, if applicable</li>
+<li>
+<code>returnData</code> - return options (as generated) with <code>name</code> field, good if you want random gender/origin, but want to know about it after</li>
+</ul><h4>
+<a name="type-for-randopeepcorporatename" class="anchor" href="#type-for-randopeepcorporatename"><span class="octicon octicon-link"></span></a><code>type</code> for <code>randopeep.corporate.name</code>
+</h4>
+
+<p>It can be one of these:</p>
+
+<ul>
+<li>cyber -  a company from the future</li>
+<li>firm - a law-firm, all last names are random non-fantasy, but from the same origin</li>
+<li>small - a small company</li>
+<li>large - a large corp</li>
+</ul><h4>
+<a name="derived-for-randopeepinternet" class="anchor" href="#derived-for-randopeepinternet"><span class="octicon octicon-link"></span></a><code>derived</code> for <code>randopeep.internet.*</code>
+</h4>
+
+<p>Will attempt to use the text that you give it as a base for generating other things.  Makes more-legit looking email, if you already know the name, for example.</p>
 
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<h3>
-<a name="adding-your-own-name-libraries" class="anchor" href="#adding-your-own-name-libraries"><span class="octicon octicon-link"></span></a>Adding your own name-libraries</h3>
-
-<p>You can add your own, if you install dev-tools with <code>npm install</code> then add whatever you want to <code>data/</code> dir, and run <code>grunt</code>.</p>
-
-<p>Format is 1 word per line.</p>
-
-<h3>
-<a name="using-different-name-libraries" class="anchor" href="#using-different-name-libraries"><span class="octicon octicon-link"></span></a>Using different name-libraries</h3>
-
-<p>Say you want a modern female firstname, and a hacker lastname:</p>
-
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">myLeetName</span> <span class="o">=</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'person/modern/female'</span><span class="p">,</span> <span class="s1">'person/netrunner'</span><span class="p">);</span>
-</pre></div>
+<p>See unit-tests in <a href="https://github.com/konsumer/randopeep/blob/master/test/test.js">test/test.js</a> if you need more details.</p>
 
 <h3>
 <a name="node" class="anchor" href="#node"><span class="octicon octicon-link"></span></a>Node</h3>
@@ -73,7 +179,7 @@
 <p>in your code:</p>
 
 <div class="highlight"><pre><span class="kd">var</span> <span class="nx">randopeep</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'randopeep'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">myLeetName</span> <span class="o">=</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'person/netrunner'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">myFakeName</span> <span class="o">=</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">name</span><span class="p">();</span>
 </pre></div>
 
 <h3>
@@ -83,9 +189,56 @@
 
 <div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://konsumer.github.io/randopeep/randopeep.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'I am a totally leet haxor, my name is '</span> <span class="o">+</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'person/netrunner'</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'I am a totally cool dude, my name is '</span> <span class="o">+</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">name</span><span class="p">({</span><span class="nx">gender</span><span class="o">:</span><span class="s1">'male'</span><span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
+
+<p>There is also support for AMD/require.js, just put out/randopeep.js in your application dir, and do this:</p>
+
+<div class="highlight"><pre><span class="nx">define</span><span class="p">([</span><span class="s1">'randopeep'</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">peep</span><span class="p">){</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'I am a totally cool lady, my name is '</span> <span class="o">+</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">name</span><span class="p">({</span><span class="nx">gender</span><span class="o">:</span><span class="s1">'female'</span><span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+<h3>
+<a name="lite-version" class="anchor" href="#lite-version"><span class="octicon octicon-link"></span></a>Lite-version</h3>
+
+<p>If you want to load your data dynamically, instead of inline, build with <code>grunt lite-browser</code> or <code>grunt lite-node</code>. For <code>grunt lite-browser</code>, make sure <code>dataLocation</code> in Gruntfile.js is set to a URL where your data can be found.</p>
+
+<h3>
+<a name="adding-your-own-name-libraries" class="anchor" href="#adding-your-own-name-libraries"><span class="octicon octicon-link"></span></a>Adding your own name-libraries</h3>
+
+<p>You can add your own, if you install dev-tools with <code>npm install</code> then add whatever you want to <a href="https://github.com/konsumer/randopeep/tree/master/data-src/wordlists">data-src/wordlists</a> dir, and run <code>grunt</code>.</p>
+
+<p>Format is 1 item per line.</p>
+
+<h3>
+<a name="using-name-libraries" class="anchor" href="#using-name-libraries"><span class="octicon octicon-link"></span></a>Using name-libraries</h3>
+
+<p>Say you want an English female firstname, and a hacker lastname:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">myLeetName</span> <span class="o">=</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'name/english/female/first'</span><span class="p">)</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'name/netrunner/first'</span><span class="p">);</span>
+</pre></div>
+
+<h2>
+<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>You can run my CLI tests with <code>npm test</code> or open test/index.html to run same tests, in-browser.</p>
+
+<h2>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>TODO</h2>
+
+<ul>
+<li>use the GURPS class-data</li>
+<li>ipsum could be smarter with English, so it can assemble seemingly sensical text.</li>
+</ul><h2>
+<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<ul>
+<li>see <a href="https://github.com/konsumer/randopeep/tree/master/data-src">data credits</a> for info about where a lot of this stuff came from.</li>
+</ul>
+
+
       </section>
     </div>
 
