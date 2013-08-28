@@ -17,7 +17,7 @@
     <header>
       <div class="container">
         <h1>Rando Peep</h1>
-        <h2>Generate random fake people, in javascript, based on data files.</h2>
+        <h2>Generate random fake data, in javascript, based on data files &amp; functions</h2>
 
         <section id="downloads">
           <a href="https://github.com/konsumer/randopeeps/zipball/master" class="btn">Download as .zip</a>
@@ -32,6 +32,8 @@
 
 
 <!-- snip -->
+
+<p>Originally I made this for generating fake NPCs for RPGs &amp; fake accounts for things online.</p>
 
 <p><a href="https://github-camo.global.ssl.fastly.net/57f79964fd5f7583c398408724f24106dbba76bc/687474703a2f2f7468656e6577666f7274792e61726561766f696365732e636f6d2f66696c65732f323031322f30342f6d617273686d616c6c6f775f70656570732e6a7067" target="_blank"><img src="https://github-camo.global.ssl.fastly.net/57f79964fd5f7583c398408724f24106dbba76bc/687474703a2f2f7468656e6577666f7274792e61726561766f696365732e636f6d2f66696c65732f323031322f30342f6d617273686d616c6c6f775f70656570732e6a7067" alt="Peeps" style="max-width:100%;"></a></p>
 
@@ -223,7 +225,7 @@
 <h3>
 <a name="using-name-libraries" class="anchor" href="#using-name-libraries"><span class="octicon octicon-link"></span></a>Using name-libraries</h3>
 
-<p>Say you want an English female firstname, and a hacker lastname:</p>
+<p>Let's pretend some of the built-in wordlist librarues don't have the <code>randopeep.name()</code> convenience function, and load the libraries, directly:</p>
 
 <div class="highlight"><pre><span class="kd">var</span> <span class="nx">myLeetName</span> <span class="o">=</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'name/english/female/first'</span><span class="p">)</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nx">randopeep</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'name/netrunner/first'</span><span class="p">);</span>
 </pre></div>
